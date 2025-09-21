@@ -1,0 +1,45 @@
+# Visual Studio temporary files, build results, user-specific files
+.vs/
+bin/
+obj/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider / ReSharper / NCrunch / DotCover / Cake / Fody
+_ReSharper*/
+*.DotSettings.user
+_NCrunch_*
+*.dotCover
+.fake/
+FodyWeavers.xsd
+
+# Logs and local database files
+*.log
+*.mdf
+*.ldf
+
+# Code coverage
+*.coverage
+*.coveragexml
+coverage*.json
+coverage*.xml
+
+# NuGet packages
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+*.nupkg
+*.snupkg
+
+# Node.js dependencies
+node_modules/
+
+# Local app settings (may contain secrets)
+appsettings.local.json
+
+# Backup, temp, auto-generated files
+*.bak
+*.tmp
+*.swp
+*.cache

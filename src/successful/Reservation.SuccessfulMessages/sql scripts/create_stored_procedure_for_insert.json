@@ -1,0 +1,12 @@
+CREATE OR REPLACE PROCEDURE insert_successful_reservation(
+    id uuid,
+    p_dt TIMESTAMPTZ,
+    p_raw_request TEXT
+)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO "SuccessfulReservations" ("Id", "DT", "Raw_Request")
+    VALUES (id, COALESCE(p_dt, CURRENT_TIMESTAMP), p_raw_request);
+END;
+$$;
