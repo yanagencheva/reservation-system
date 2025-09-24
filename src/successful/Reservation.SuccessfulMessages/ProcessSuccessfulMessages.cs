@@ -39,6 +39,7 @@ public class ProcessSuccessfulMessages : BackgroundService
     {
         var result = await _messageService.AddMessage(message);
         _logger.LogInformation("Processing result message: {message}", message);
+        
         if(result != null)
         {
             var messageWithValidation = JsonSerializer.Serialize(result);

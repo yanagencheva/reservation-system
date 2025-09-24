@@ -13,7 +13,7 @@ public class RabbitMQConnection
     private static readonly object SyncLocker = new();
 
     private bool _disposed;
-    private IConnection _connection; 
+    private IConnection? _connection; 
     private readonly RetryPolicy _policy;
     private readonly ConnectionFactory _connectionFactory;
     private readonly ILogger<RabbitMQConnection> _logger;

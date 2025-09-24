@@ -19,7 +19,7 @@ public class SuccessfulMessagesService : ISuccessfulMessagesService
         _serviceScopeFactory = serviceScopeFactory;
     }
 
-    public async Task<ResultMessage> AddMessage(string message)
+    public async Task<ResultMessage?> AddMessage(string message)
     {
         try
         {

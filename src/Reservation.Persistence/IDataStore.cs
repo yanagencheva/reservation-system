@@ -48,5 +48,4 @@ public interface IDataStore
     Task UpdateAsync<T>(T entity) where T : class;
 
     Task<int> ExecuteStoredProcedureNonQueryAsync(string procedureName, params object[] parameters);
-    //Task<int> ExecuteStoredProcedureNonQueryAsync(string procedureName, params object[] parameters);
 }

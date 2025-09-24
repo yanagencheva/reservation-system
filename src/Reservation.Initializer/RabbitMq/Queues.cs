@@ -7,7 +7,7 @@ public static class Queues
     public const string FAILED = "Fail_RabbitMq";
     public const string RESPONSE = "Response_RabbitMq";
 
-    public static Dictionary<string, Dictionary<string, object>> AllQueues => new Dictionary<string, Dictionary<string, object>>()
+    public static Dictionary<string, Dictionary<string, object>?> AllQueues => new Dictionary<string, Dictionary<string, object>?>()
     {
         { MESSAGES, null },
         { SUCCESSED, null },

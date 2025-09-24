@@ -14,8 +14,5 @@ public abstract class EntityConfiguration<TEntity> : IEntityTypeConfiguration<TE
         ConfigureEntity(builder);
     }
 
-    /// <summary>
-    /// Override this method to configure entity-specific properties
-    /// </summary>
     protected abstract void ConfigureEntity(EntityTypeBuilder<TEntity> builder);
 }

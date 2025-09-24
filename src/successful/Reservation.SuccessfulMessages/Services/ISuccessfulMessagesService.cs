@@ -4,5 +4,5 @@ namespace Reservation.SuccessfulMessages.Services;
 
 public interface ISuccessfulMessagesService
 {
-    Task<ResultMessage> AddMessage(string message);
+    Task<ResultMessage?> AddMessage(string message);
 }

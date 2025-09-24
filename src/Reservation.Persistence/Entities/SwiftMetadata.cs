@@ -25,35 +25,35 @@ public class SwiftMetadata : Entity
     [MaxLength(1000)]
     public string? Trailer { get; set; }
 
-    /// <summary>Флаг дали съобщението е MT103+ (Block 3 съдържа {119:STP}).</summary>
+    /// <summary>Флаг дали съобщението е MT103+ (Block 3 with {119:STP}).</summary>
     public bool IsMt103Plus { get; set; }
 
-    /// <summary>Transaction Reference (:20: поле от Block 4).</summary>
+    /// <summary>Transaction Reference (:20: field from Block 4).</summary>
     [MaxLength(50)]
     public string? TransactionReference { get; set; }
 
-    /// <summary>Amount (:32A: поле от Block 4).</summary>
+    /// <summary>Amount (:32A: field from Block 4).</summary>
     [MaxLength(50)]
     public string? Amount { get; set; }
 
-    /// <summary>Currency (:32A: поле от Block 4).</summary>
+    /// <summary>Currency (:32A: field from Block 4).</summary>
     [MaxLength(3)]
     public string? Currency { get; set; }
 
-    /// <summary>Value Date (:32A: поле от Block 4).</summary>
+    /// <summary>Value Date (:32A: field from Block 4).</summary>
     public DateTimeOffset? ValueDate { get; set; }
 
-    /// <summary>Beneficiary (:59: поле от Block 4).</summary>
+    /// <summary>Beneficiary (:59: field from Block 4).</summary>
     public string? Beneficiary { get; set; }
 
-    /// <summary>Ordering Customer (:50A/K/F: поле от Block 4).</summary>
+    /// <summary>Ordering Customer (:50A/K/F: field from Block 4).</summary>
     public string? OrderingCustomer { get; set; }
 
-    /// <summary>MAC от Trailer.</summary>
+    /// <summary>MAC from Trailer.</summary>
     [MaxLength(50)]
     public string? Mac { get; set; }
 
-    /// <summary>CHK от Trailer.</summary>
+    /// <summary>CHK from Trailer.</summary>
     [MaxLength(50)]
     public string? Checksum { get; set; }
 }
