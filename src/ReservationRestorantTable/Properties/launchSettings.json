@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ReservationRestorantTable": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

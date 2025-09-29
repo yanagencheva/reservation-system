@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  rabbitmq:
+    image: rabbitmq:4.0-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    restart: unless-stopped
+
+  reservation-restorant-table:
+    build:
+      context: .
+      dockerfile: src/ReservationRestorantTable/Dockerfile
+    container_name: reservation-restorant-table
+    depends_on:
+      - rabbitmq
+    environment:
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    restart: unless-stopped
+
+  reservation-successful-messages:
+    build:
+      context: .
+      dockerfile: src/successful/Reservation.SuccessfulMessages/Dockerfile
+    container_name: reservation-successful-messages
+    depends_on:
+      - rabbitmq
+      - reservation-restorant-table
+    environment:
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    restart: unless-stopped
+
+  reservations-failed:
+    build:
+      context: .
+      dockerfile: src/failed/Reservations.Failed/Dockerfile
+    container_name: reservations-failed
+    depends_on:
+      - rabbitmq
+      - reservation-restorant-table
+    environment:
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    restart: unless-stopped
+
+  swift-processor-worker:
+    build:
+      context: .
+      dockerfile: src/SwiftProcessor.Worker/Dockerfile
+    container_name: swift-processor-worker
+    volumes:
+      - ./SwiftFiles:/app/SwiftFiles
+    depends_on:
+      - reservation-restorant-table
+    environment:
+      - DOTNET_RUNNING_IN_CONTAINER=true
+    restart: unless-stopped
